@@ -32,14 +32,13 @@ h3 {
 }
 
 .input_content {
-    width: 600px;
+    width: 500px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     font-weight: bold;
     color: rgb(17, 17, 17);
-    margin-right: 20px;
 }
 
 .notebox {
@@ -49,5 +48,9 @@ h3 {
     align-items: center;
     gap: 8px;
     padding: 8px;
+}
+
+.notebox > h2 img {
+    height: 30px;
 }
 

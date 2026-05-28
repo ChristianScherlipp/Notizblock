@@ -4,12 +4,10 @@
     color: white;
     border: none;
     border-radius: 10px;
-
     padding: 10px 25px;
-
     font-family: 'Cormorant Garamond';
     font-style: italic;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
 
     cursor: pointer;
@@ -31,63 +29,100 @@
 
 input {
     width: 400px;
-
-
     padding: 8px 12px;
     margin: 8px;
-
     border: none;
     border-radius: 6px;
-
     background: transparent;
-
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-
     font-size: 24px;
 }
 
-.btnNotesLeft {
+
+.btnToTrash {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     background-color: red;
     
     border-radius: 100%;
     border: 3px solid red;
 
     mask: url("../assets/icons/müll_entsorgen.svg") no-repeat center;
-    mask-size: 1.5rem 1.5rem;
+    mask-size: 1.75rem 1.75rem;
 
     -webkit-mask: url("../assets/icons/müll_entsorgen.svg") no-repeat center;
-    -webkit-mask-size: 1.5rem 1.5rem;
+    -webkit-mask-size: 1.75rem 1.75rem;
 
 
 }
 
-.btnNotesLeft:hover {
+.btnToTrash:hover {
     cursor: pointer;
     border: 3px solid red;
 }
 
-.btnNotesRight {
+.btnToArchiv {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     background-color: blue;
 
     border-radius: 100%;
 
     mask: url("../assets/icons/notiz_schreiben.svg") no-repeat center;
-    mask-size: 1.5rem 1.5rem;
+    mask-size: 1.75rem 1.75rem;
     -webkit-mask: url("../assets/icons/notiz_schreiben.svg") no-repeat center;
-    -webkit-mask-size: 1.5rem 1.5rem;
+    -webkit-mask-size: 1.75rem 1.75rem;
 }
 
-.btnNotesRight:hover {
+.btnToArchiv:hover {
     cursor: pointer;
     outline: 3px solid blue;
+}
+
+.btnToNotes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    background-color: green;
+
+    border-radius: 100%;
+
+    mask: url("../assets/icons/stift_schreibt.svg") no-repeat center;
+    mask-size: 1.75rem 1.75rem;
+    -webkit-mask: url("../assets/icons/stift_schreibt.svg") no-repeat center;
+    -webkit-mask-size: 1.75rem 1.75rem;
+}
+
+.btnToNotes:hover {
+    cursor: pointer;
+    outline: 3px solid green;
+}
+
+.btndelete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    background-color: red;
+
+    border-radius: 100%;
+
+    mask: url("../assets/icons/müllabfuhr.svg") no-repeat center;
+    mask-size: 1.75rem 1.75rem;
+    -webkit-mask: url("../assets/icons/müllabfuhr.svg") no-repeat center;
+    -webkit-mask-size: 1.75rem 1.75rem;
+}
+
+.btndelete:hover {
+    cursor: pointer;
+    outline: 3px solid red;
 }
