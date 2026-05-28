@@ -17,53 +17,39 @@ const colors = [
     "#ffac4e", "#f200ff",
     ];
 
-
 function init() {
-    getFromLocalStorage()
-    render()
-    renderArchivhNotes()
-    renderTrashNotes()
-    
+    getFromLocalStorage();
+    render();
+    renderArchivhNotes();
+    renderTrashNotes(); 
 }
-
 
 function render() {
     let contentRef = document.getElementById('content');
     contentRef.innerHTML = "";
-
     for (let indexNote = 0; indexNote < notes.length; indexNote++) {
         contentRef.innerHTML += getNoteTemplate(indexNote);
     }
-
     renderColor();
 }
 
-
 function renderArchivhNotes() {
-    
     let archivContentRef = document.getElementById('archiv_content');
     archivContentRef.innerHTML = "";
-    
     for (let indexArchivNote = 0; indexArchivNote < archivNotes.length; indexArchivNote++) {
         archivContentRef.innerHTML += getArchivNoteTemplate(indexArchivNote);
-        
     }
     renderColor();
 }
 
 function renderTrashNotes() {
-    
     let trashContentRef = document.getElementById('trash_content');
     trashContentRef.innerHTML = "";
-    
     for (let indexTrashNote = 0; indexTrashNote < trashNotes.length; indexTrashNote++) {
         trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);
-        
     }
     renderColor();
 }
-
-
 
 function addNote() {
     let noteInputRef = document.getElementById('note_input');
@@ -77,11 +63,8 @@ function addNote() {
         noteInputRef.value = "";
         titleInputRef.value = "";
     }
-    
     saveToLocalStorage();
     render();
-    
-    
 }
 
 function notesToTrash(indexNote) {
@@ -91,12 +74,10 @@ function notesToTrash(indexNote) {
         trashNotes.push(trashNote[0]);
         trashNotesTitle.push(trashNoteTitle[0]);
     }
-    
     saveToLocalStorage();
     render();
-    renderArchivhNotes()
+    renderArchivhNotes();
     renderTrashNotes();
-    
 }
 
 function notesToArchiv(indexNote) {
@@ -106,12 +87,10 @@ function notesToArchiv(indexNote) {
         archivNotes.push(archivNote[0]);
         archivNotesTitle.push(archivNoteTitle[0]);
     }
-    
     saveToLocalStorage();
     render();
-    renderArchivhNotes()
+    renderArchivhNotes();
     renderTrashNotes();
-    
 }
 
 function archivToTrash(indexArchivNote) {
@@ -121,12 +100,10 @@ function archivToTrash(indexArchivNote) {
         trashNotes.push(trashNote[0]);
         trashNotesTitle.push(trashNoteTitle[0]);
     }
-    
     saveToLocalStorage();
     render();
-    renderArchivhNotes()
+    renderArchivhNotes();
     renderTrashNotes();
-    
 }
 
 function archivToNote(indexArchivNote) {
@@ -136,10 +113,9 @@ function archivToNote(indexArchivNote) {
         notes.push(note[0]);
         notesTitle.push(noteTitle[0]);
     }
-    
     saveToLocalStorage();
     render();
-    renderArchivhNotes()
+    renderArchivhNotes();
     renderTrashNotes();
 }
 
@@ -150,22 +126,18 @@ function trashToNote(indexTrashNote) {
         notes.push(note[0]);
         notesTitle.push(noteTitle[0]);
     }
-    
     saveToLocalStorage();
     render();
-    renderArchivhNotes()
+    renderArchivhNotes();
     renderTrashNotes();
 }
-
-
 
 function deleteNote(indexTrashNote) {
     trashNotes.splice(indexTrashNote, 1 )
     trashNotesTitle.splice(indexTrashNote, 1 )
-    
     saveToLocalStorage();
     render();
-    renderArchivhNotes()
+    renderArchivhNotes();
     renderTrashNotes();
 }
 
@@ -177,7 +149,6 @@ function saveToLocalStorage(){
     localStorage.setItem("archivNotes", JSON.stringify(archivNotes));
     localStorage.setItem("archivNotesTitle", JSON.stringify(archivNotesTitle));
 }
-
 
 function getFromLocalStorage() {
     let noteArr = JSON.parse(localStorage.getItem("notes"));
@@ -203,15 +174,12 @@ function getFromLocalStorage() {
     archivNotesTitle = archivNoteTitleArr;
     trashNotes = trashNoteArr;
     trashNotesTitle = trashNoteTitleArr;
-    
 }
 
 function renderColor() {
     let allNotes = document.querySelectorAll('.note');
-
     allNotes.forEach(note => {
         let randomColor = getRandomColor();
-
         note.style.setProperty("--note-color", randomColor);
     });
 }
