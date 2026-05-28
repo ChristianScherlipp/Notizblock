@@ -1,0 +1,66 @@
+
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 160px;
+    min-height: 120px;
+    background-color: whitesmoke;
+    
+
+    padding: 15px;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 10px rgba(12, 48, 251, 0.533);
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.note:hover {
+    transform: translateY(-5px);
+}
+
+.note::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    border-radius: 10px 10px 0 0;
+
+    background: var(--note-color);
+}
+
+.note > h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.note > p {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-style: 2.7rem;
+}
+
+.note > div {
+    display: flex;
+    justify-content: space-between;
+    
+}

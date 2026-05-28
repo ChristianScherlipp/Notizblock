@@ -1,0 +1,53 @@
+
+
+h1 {
+    font-family: 'Style Script';
+     font-style: italic;
+    font-weight: 400;
+    font-size: 4.5rem;
+    color: rgb(17, 17, 17);
+
+    margin-top: 1.75;
+    margin-bottom: 1.25;
+}
+
+h2 {
+    font-family: 'Figtree';
+    font-size: 3.8;
+
+}
+
+h3 {
+    font-size: 2.75;
+}
+
+
+.inputbox {
+    padding: 8px;
+    display: flex;
+    align-items:center;
+    gap: 8px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input_content {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: rgb(17, 17, 17);
+    margin-right: 20px;
+}
+
+.notebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+}
+
