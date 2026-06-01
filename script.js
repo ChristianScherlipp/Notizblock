@@ -1,11 +1,4 @@
 
-// let notesTitle =[];
-// let notes = [];
-// let archivNotesTitle = [];
-// let archivNotes = [];
-// let trashNotesTitle = [];
-// let trashNotes = [];
-
 let allNotes = {
     'notesTitle' : [],
     'notes' : [],
@@ -76,64 +69,12 @@ function addNote() {
     render();
 }
 
-function notesToTrash(indexNote) {
-    let trashNote = allNotes.notes.splice(indexNote, 1 )
-    let trashNoteTitle = allNotes.notesTitle.splice(indexNote, 1);
-    if (trashNote != "") {
-        trashNotes.push(trashNote[0]);
-        trashNotesTitle.push(trashNoteTitle[0]);
-    }
-    saveToLocalStorage();
-    render();
-    renderArchivhNotes();
-    renderTrashNotes();
-}
-
-function notesToArchiv(indexNote) {
-    let archivNote = allNotes.notes.splice(indexNote, 1 )
-    let archivNoteTitle = allNotes.notesTitle.splice(indexNote, 1 )
-    if (archivNote != "") {
-        allNotes.archivNotes.push(archivNote[0]);
-        allNotes.archivNotesTitle.push(archivNoteTitle[0]);
-    }
-    saveToLocalStorage();
-    render();
-    renderArchivhNotes();
-    renderTrashNotes();
-}
-
-function archivToTrash(indexArchivNote) {
-    let trashNote = allNotes.archivNotes.splice(indexArchivNote, 1 )
-    let trashNoteTitle = allNotes.archivNotesTitle.splice(indexArchivNote, 1 )
-    if (trashNote != "") {
-        allNotes.trashNotes.push(trashNote[0]);
-        allNotes.trashNotesTitle.push(trashNoteTitle[0]);
-    }
-    saveToLocalStorage();
-    render();
-    renderArchivhNotes();
-    renderTrashNotes();
-}
-
-function archivToNote(indexArchivNote) {
-    let note = allNotes.archivNotes.splice(indexArchivNote, 1 )
-    let noteTitle = allNotes.archivNotesTitle.splice(indexArchivNote, 1 )
-    if (note != "") {
-        allNotes.notes.push(note[0]);
-        allNotes.notesTitle.push(noteTitle[0]);
-    }
-    saveToLocalStorage();
-    render();
-    renderArchivhNotes();
-    renderTrashNotes();
-}
-
-function trashToNote(indexTrashNote) {
-    let note = allNotes.trashNotes.splice(indexTrashNote, 1 )
-    let noteTitle = allNotes.trashNotesTitle.splice(indexTrashNote, 1 )
-    if (note != "") {
-        allNotes.notes.push(note[0]);
-        allNotes.notesTitle.push(noteTitle[0]);
+function moveNote(indexNote, startKey, destinationKey) {
+    let note = allNotes[startKey].splice(indexNote, 1 )
+    let noteTitle = allNotes[startKey + 'Title'].splice(indexNote, 1);
+    if (allNotes != "") {
+        allNotes[destinationKey].push(note[0]);
+        allNotes[destinationKey + 'Title'].push(noteTitle[0]);
     }
     saveToLocalStorage();
     render();
